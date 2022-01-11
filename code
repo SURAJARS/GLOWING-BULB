@@ -1,0 +1,116 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Glw bulb</title>
+    <link rel="stylesheet" >
+    </head>
+  <body>
+    <div class="wrapper">
+      <input type="checkbox" id="btn">
+      <img id="bulb-off" src="https://media.geeksforgeeks.org/wp-content/uploads/OFFbulb.jpg" alt="bulb">
+      <img id="bulb-on" src="https://media.geeksforgeeks.org/wp-content/uploads/ONbulb.jpg" alt="bulb1">
+      
+      <label for="btn"><span></span></label>
+      
+      </div>
+    
+  <style>
+   *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'poppins',same-serif;
+    }
+    .body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+      background:#111;
+    }
+    .wrapper{
+      height:500px;
+      width:350px;
+      position:relative;
+    }
+    .wrapper img{
+      height:450px;
+      width:100%;
+      margin-top:-50px;
+      position:absolute;
+      background-color:#111;
+    }
+    .wrapper label{
+      position:absolute;
+      bottom:0px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+    .wrapper label span{
+      color:#000000;
+      font-size:20px;
+      text-transform:uppercase;
+      display:block;
+      border:2px solid #000000;
+      width:180px;
+      height:50px;
+      text-align:center;
+      line-height:48px;
+      border-radius:5px;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+    .wrapper label span:before{
+     content:"Turn off"; 
+    }
+    .wrapper label span:hover{
+      background:#fff;
+      color:#111;
+      
+    }
+    .wrapper img#bulb-on{
+      opacity:0;
+      animation:glow 3s linear infinite;
+      
+    }
+    @keyframes glow{
+     0%{
+       opacity:1;
+      }
+       5%{
+       opacity:1;
+      }
+       70%{
+       opacity:1;
+      }
+       74%{
+       opacity:0;
+      }
+       80%{
+       opacity:1;
+      }
+       84%{
+       opacity:0;
+      }
+       90%{
+       opacity:1;
+      }
+       100%{
+       opacity:1;
+      }
+      
+    }
+    #btn:checked ~ img#bulb-on{
+     animation:none; 
+    }
+    #btn:checked ~ label span:before{
+     content:"Turn on"; 
+    }
+    .wrapper input{
+     display:none; 
+    }
+    
+    
+    </style>
+    </body>
+  </html>
